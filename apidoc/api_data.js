@@ -1,0 +1,777 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/api/v1/users/:userId/delete/:authToken",
+    "title": "delete a users",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The userId should be passed as the URL parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Deleted the user successfully\",\n    \"status\": 200,\n    \"data\": {\n        \"_id\": \"5bf0febed2fc99068897e189\",\n        \"__v\": 0,\n        \"createdOn\": \"2018-11-18T05:55:10.000Z\",\n        \"mobileNumber\": 3823283,\n        \"email\": \"dhoni7@gmail.com\",\n        \"password\": \"abcd\",\n        \"lastName\": \"Dhoni\",\n        \"firstName\": \"M.S\",\n        \"userId\": \"kSXbJEfMP\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1UsersUseridDeleteAuthtoken"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/users/:userId/edit/:authToken",
+    "title": "Edit a users",
+    "version": "0.0.1",
+    "group": "edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The userId should be passed as the URL parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User details edited\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "edit",
+    "name": "PutApiV1UsersUseridEditAuthtoken"
+  },
+  {
+    "group": "todolist",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/todolist/addchildList",
+    "title": "api for adding the sub todo list of the users.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "childId",
+            "description": "<p>id of the todo list . (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "todoList",
+            "description": "<p>todoList is the to do list given by user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     {\n    \"n\": 1,\n    \"nModified\": 1,\n    \"ok\": 1\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "GetApiV1TodolistAddchildlist"
+  },
+  {
+    "group": "todolist",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/todolist/addchildList",
+    "title": "api for remove the sub todo list of the users.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "childId",
+            "description": "<p>id of the todo list . (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "todoList",
+            "description": "<p>todoList is the to do list given by user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    {\n   \"n\": 1,\n   \"nModified\": 1,\n   \"ok\": 1\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "GetApiV1TodolistAddchildlist"
+  },
+  {
+    "group": "todolist",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/todolist/view/:userId",
+    "title": "api to get  the single users.",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     {\n    \"error\": false,\n    \"message\": \"getToDoList Found\",\n    \"status\": 200,\n    \"data\": {\n        \"_id\": \"5c206a90f9fcea1500bc58c9\",\n        \"todoList\": [\n            {\n                \"list\": \"hi these is to be done\",\n                \"id\": \"gz3V8xs-5\"\n            }\n        ],\n        \"isChecked\": false,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"userId\": \"khQWNGD7o\",\n        \"__v\": 0\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"No User Found\",\n    \"status\": 404,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "GetApiV1TodolistViewUserid"
+  },
+  {
+    "group": "todolist",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/usermanage/acceptRequest",
+    "title": "api for accepting the friend request.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>id of the user to whom friend request is send . (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "senderId",
+            "description": "<p>senderId of the user who sends the request. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "detail",
+            "description": "<p>full name of the  sender user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userDetail",
+            "description": "<p>full name of the  user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    {\n    \"error\": false,\n    \"message\": \"friend reuqets is updated\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": false,\n    \"message\": \"friend reuquets is updated\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 0,\n        \"ok\": 1\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user-mangement.js",
+    "groupTitle": "todolist",
+    "name": "GetApiV1UsermanageAcceptrequest"
+  },
+  {
+    "group": "todolist",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/usermanage/friendRequest",
+    "title": "api for sending the friend request.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>id of the user to whom friend request is send . (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "senderId",
+            "description": "<p>senderId of the user who sends the request. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "detail",
+            "description": "<p>full name of the  user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    {\n    \"error\": false,\n    \"message\": \"friend reuqets is updated\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n\"data\": {\n        \"n\": 1,\n        \"nModified\": 0,\n        \"ok\": 1\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user-mangement.js",
+    "groupTitle": "todolist",
+    "name": "GetApiV1UsermanageFriendrequest"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/todolist/checkedTodoList",
+    "title": "api for checked the to do list.",
+    "group": "todolist",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "childId",
+            "description": "<p>id of the todo list . (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "          {\n    \"error\": false,\n    \"message\": \"checkedTodoList successfully\",\n    \"status\": 200,\n    \"data\": {\n        \"_id\": \"5c24b3ff87ecf212f0ce1b7b\",\n        \"childId\": \"_fQy3R2nt\",\n        \"__v\": 0,\n        \"todoList\": [\n            {\n                \"list\": \"hi there\"\n            }\n        ],\n        \"isChecked\": true,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"userId\": \"khQWNGD7o\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n     \"error\": true,\n     \"message\": \"Failed to checked ToDoList\",\n     \"status\": 500,\n     \"data\": null\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "PostApiV1TodolistCheckedtodolist"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/todolist/createList",
+    "title": "api for creating the user.",
+    "group": "todolist",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "isChecked",
+            "description": "<p>isChecked of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "todoList",
+            "description": "<p>todoList is the to do list given by user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "         {\n    \"error\": false,\n    \"message\": \"create createToDoList\",\n    \"status\": 200,\n    \"data\": {\n        \"__v\": 0,\n        \"_id\": \"5c206a90f9fcea1500bc58c9\",\n        \"todoList\": [\n            {\n                \"list\": \"hi these is to be done\",\n                \n            }\n        ],\n        \"isChecked\": false,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"userId\": \"khQWNGD7o\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"Failed to create createToDoList\",\n    \"status\": 500,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "PostApiV1TodolistCreatelist"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/todolist/deleteTodoList",
+    "title": "api for deleting the user to do list.",
+    "group": "todolist",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "childId",
+            "description": "<p>id of the todo list . (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "         {\n    \"error\": false,\n    \"message\": \"Deleted the user successfully\",\n    \"status\": 200,\n    \"data\": {\n        \"_id\": \"5c20e83d6ac424129c5a08de\",\n        \"childId\": \"wGgwtRW0a\",\n        \"__v\": 0,\n        \"todoList\": [\n            {\n                \"list\": \"hi there\"\n            },\n            {\n                \"list\": \"updted the child\"\n            }\n        ],\n        \"isChecked\": false,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"userId\": \"khQWNGD7o\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"Failed to delete ToDoList\",\n    \"status\": 500,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/todoroute.js",
+    "groupTitle": "todolist",
+    "name": "PostApiV1TodolistDeletetodolist"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/usermanage/view/all",
+    "title": "api for getting all users.",
+    "version": "1.0.0",
+    "group": "users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     {\n        \"error\": false,\n        \"message\": \"All User Details Found\",\n        \"status\": 200,\n        \"data\": [\n     {\n        \"createdOn\": \"2018-11-03T08:25:48.000Z\",\n        \"mobileNumber\": 915757878,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"password\": \"$2a$10$XIaqIorlQFeuvmgAH4qrEuVPrqFp5Ub8n910g6CilHsNVnS74.btO\",\n        \"lastName\": \"Harode\",\n        \"firstName\": \"Aniket\",\n        \"userId\": \"s-oxtXcsf\"\n    }\n]\n\n    }",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"No User Found\",\n    \"status\": 404,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user-mangement.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsermanageViewAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/users/getUser/:userId",
+    "title": "api for getting single  users.",
+    "version": "1.0.0",
+    "group": "users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n    \"error\": false,\n    \"message\": \"User Details Found\",\n    \"status\": 200,\n    \"data\": \n {\n    \"createdOn\": \"2018-11-03T08:25:48.000Z\",\n    \"mobileNumber\": 915757878,\n    \"email\": \"aniket.harode@gmail.com\",\n    \"lastName\": \"Harode\",\n    \"firstName\": \"Aniket\",\n    \"userId\": \"s-oxtXcsf\"\n}\n\n\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"No User Found\",\n    \"status\": 404,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersGetuserUserid"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/logout/:userId",
+    "title": "api for logout of the users.",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "      {\n   \"error\": false,\n   \"message\": \"Logged Out Successfully\",\n   \"status\": 200,\n   \"data\": null\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n       \"error\": true,\n       \"message\": \"Error Occured.\",\n       \"status\": 500,\n       \"data\": null\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersLogoutUserid"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/users/view/all",
+    "title": "api for getting all users.",
+    "version": "1.0.0",
+    "group": "users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     {\n        \"error\": false,\n        \"message\": \"All User Details Found\",\n        \"status\": 200,\n        \"data\": [\n     {\n        \"createdOn\": \"2018-11-03T08:25:48.000Z\",\n        \"mobileNumber\": 915757878,\n        \"email\": \"aniket.harode@gmail.com\",\n        \"password\": \"$2a$10$XIaqIorlQFeuvmgAH4qrEuVPrqFp5Ub8n910g6CilHsNVnS74.btO\",\n        \"lastName\": \"Harode\",\n        \"firstName\": \"Aniket\",\n        \"userId\": \"s-oxtXcsf\"\n    }\n]\n\n    }",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"No User Found\",\n    \"status\": 404,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersViewAll"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/users/login",
+    "title": "api for user login.",
+    "group": "users",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "         {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RpZCI6Im55ZnhKdllMbyIsImlhdCI6MTU0MjUyMDY1MDY3MCwiZXhwIjoxNTQyNjA3MDUwLCJzdWIiOiJhdXRoVG9rZW4iLCJpc3MiOiJlZENoYXQiLCJkYXRhIjp7Im1vYmlsZU51bWJlciI6MzgyMzI4MywiZW1haWwiOiJkaG9uaTdAZ21haWwuY29tIiwibGFzdE5hbWUiOiJEaG9uaSIsImZpcnN0TmFtZSI6Ik0uUyIsInVzZXJJZCI6ImtTWGJKRWZNUCJ9fQ.5ghDJ0K84b09HtpAWVLUWdm8HsJ53p3bw5rmc3o52Mo\",\n        \"userDetails\": {\n            \"mobileNumber\": 3823283,\n            \"email\": \"dhoni7@gmail.com\",\n            \"lastName\": \"Dhoni\",\n            \"firstName\": \"M.S\",\n            \"userId\": \"kSXbJEfMP\"\n        }\n    }\n}\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"No User Details Found\",\n    \"status\": 404,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersLogin"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/users/signup",
+    "title": "api for user signup.",
+    "group": "users",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>firstName of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>lastName of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobileNumber",
+            "description": "<p>mobileNumber of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "         {\n    \"error\": false,\n    \"message\": \"usser created succcessfully\",\n    \"status\": 200,\n    \"data\": {\n        \"__v\": 0,\n        \"_id\": \"5bf0febed2fc99068897e189\",\n        \"createdOn\": \"2018-11-18T05:55:10.000Z\",\n        \"mobileNumber\": 3823283,\n        \"email\": \"dhoni7@gmail.com\",\n        \"lastName\": \"Dhoni\",\n        \"firstName\": \"M.S\",\n        \"userId\": \"kSXbJEfMP\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n    \"error\": true,\n    \"message\": \"One or More Parameter(s) is missing\",\n    \"status\": 400,\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersSignup"
+  }
+] });
